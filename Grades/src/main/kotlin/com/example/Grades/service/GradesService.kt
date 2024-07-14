@@ -1,11 +1,12 @@
 package com.example.Grades.service
 
+import com.example.Grades.client.StudentClient
 import com.example.Grades.model.Grades
 import com.example.Grades.repository.GradesRepository
 import org.springframework.stereotype.Service
 
 @Service
-class GradesService(private val repository: GradesRepository) {
+class GradesService(private val repository: GradesRepository, private val studentClient: StudentClient) {
     fun getAllGrades(): List<Grades> {
         return repository.findAll()
     }
@@ -17,6 +18,9 @@ class GradesService(private val repository: GradesRepository) {
     }
 
     fun createGrades(grades: Grades): Grades {
+        val studentId = grades.studentId ?: throw IllegalArgumentException("Student ID cannot be null")
+        val student = studentClient.getStudentById(studentId)
+        println("Student info: $student")
         return repository.save(grades)
     }
 

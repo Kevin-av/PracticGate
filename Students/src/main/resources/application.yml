@@ -12,7 +12,7 @@ spring:
     enabled: true
     baselineVersion: 1
     locations:
-      classpath: db/migration
+      classpath:db/migration
     sqlMigrationSuffixes: .sql
     baselineOnMigrate: true
     sqlMigrationPrefix: V

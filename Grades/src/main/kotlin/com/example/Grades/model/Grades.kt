@@ -9,5 +9,6 @@ data class Grades (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
     val subject: String? = null,
-    val grade: Int? = null
+    val grade: Int? = null,
+    val studentId: Long? = null
 )
