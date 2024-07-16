@@ -1,5 +1,6 @@
 package com.example.Grades.service
 
+import com.example.Grades.client.Student
 import com.example.Grades.client.StudentClient
 import com.example.Grades.model.Grades
 import com.example.Grades.repository.GradesRepository
@@ -19,8 +20,6 @@ class GradesService(private val repository: GradesRepository, private val studen
 
     fun createGrades(grades: Grades): Grades {
         val studentId = grades.studentId ?: throw IllegalArgumentException("Student ID cannot be null")
-        val student = studentClient.getStudentById(studentId)
-        println("Student info: $student")
         return repository.save(grades)
     }
 
@@ -40,4 +39,8 @@ class GradesService(private val repository: GradesRepository, private val studen
     fun deleteGrades(id: Long) {
         repository.deleteById(id)
     }
+
+    fun getAllStudents(): List<Student> = studentClient.getAllStudents()
+
+    fun createStudent(student: Student): Student = studentClient.createStudent(student)
 }

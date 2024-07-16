@@ -10,5 +10,7 @@ data class Grades (
     val id: Long? = null,
     val subject: String? = null,
     val grade: Int? = null,
+
+    @Column(name = "student_id")
     val studentId: Long? = null
 )

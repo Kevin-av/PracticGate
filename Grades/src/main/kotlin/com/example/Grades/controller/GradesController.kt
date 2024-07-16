@@ -1,5 +1,6 @@
 package com.example.Grades.controller
 
+import com.example.Grades.client.Student
 import com.example.Grades.model.Grades
 import com.example.Grades.service.GradesService
 import org.springframework.http.HttpStatus
@@ -7,7 +8,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/api/grades")
+@RequestMapping("/grades")
 class GradesController(private val service: GradesService) {
 
     @GetMapping

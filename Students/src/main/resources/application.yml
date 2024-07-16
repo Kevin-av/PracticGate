@@ -19,9 +19,9 @@ spring:
     schemas: public
   #Conexion a la base de datos
   datasource:
-    url: jdbc:postgresql://aws-0-ca-central-1.pooler.supabase.com:6543/postgres
-    username: postgres.gxmrfoqvqkqahfzijjga
-    password: 3H7eY740jsMxCHxR
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 1234
     driverClassName: org.postgresql.Driver
 
 #Conexion para registro de esta API en eureka

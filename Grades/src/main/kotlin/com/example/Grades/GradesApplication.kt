@@ -2,11 +2,11 @@ package com.example.Grades
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient
+import org.springframework.cloud.openfeign.EnableFeignClients
 
 
-@EnableDiscoveryClient
-@SpringBootApplication(scanBasePackages = ["com.example.Grades.client"])
+@EnableFeignClients
+@SpringBootApplication
 class GradesApplication
 
 fun main(args: Array<String>) {
